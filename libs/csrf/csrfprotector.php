@@ -476,15 +476,13 @@ if (!defined('__CSRF_PROTECTOR__')) {
 		{
 			$request_scheme = 'https';
 
-			if (isset($_SERVER['REQUEST_SCHEME'])) {
-				$request_scheme = $_SERVER['REQUEST_SCHEME'];
-			} else {
+		
 				if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
 					$request_scheme = 'https';
 				} else {
 					$request_scheme = 'http';
 				}
-			}
+			
 
 			return $request_scheme . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 		}
